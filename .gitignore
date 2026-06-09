@@ -1,0 +1,13 @@
+#	Ejecutables
+test/**/*
+!test/**/*/
+!test/**/*.*
+test/**/*.exe
+
+#	Directorio para geerar .dll/.so/.dylib
+lib/*
+
+#	Directorio de build/cache de CMake
+build/
+
+

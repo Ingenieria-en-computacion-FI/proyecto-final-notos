@@ -1,0 +1,60 @@
+#
+#	Archivo con los "logos" del proyecto	:P
+#
+#	Todos los logos presentados fueron creados
+#	mediante TAAG ([T]ext to [A]SCII [A]rt [G]enerator: Create ASCII Art from Text).
+#	
+#	Herramienta Open Source de "patorjk".
+#	
+#	URL "base":		https://patorjk.com/software/taag/
+#
+
+
+#
+#	Logo del OS	(notOS).
+#
+#	URL para recreación:	https://patorjk.com/software/taag/#p=display&f=Big+Money-ne&t=notOS&x=none&v=4&h=4&w=80&we=false
+#
+/**
+	*	                       /$$      /$$$$$$   /$$$$$$ 
+	*	                      | $$     /$$__  $$ /$$__  $$
+	*	 /$$$$$$$   /$$$$$$  /$$$$$$  | $$  \ $$| $$  \__/
+	*	| $$__  $$ /$$__  $$|_  $$_/  | $$  | $$|  $$$$$$ 
+	*	| $$  \ $$| $$  \ $$  | $$    | $$  | $$ \____  $$
+	*	| $$  | $$| $$  | $$  | $$ /$$| $$  | $$ /$$  \ $$
+	*	| $$  | $$|  $$$$$$/  |  $$$$/|  $$$$$$/|  $$$$$$/
+	*	|__/  |__/ \______/    \___/   \______/  \______/ 
+*/
+
+
+#
+#	Logo para el CMakeLists.txt principal
+#	--es decir, el de la configuración base de la compilación del proyecto.
+#
+#	URL para recreación:	https://patorjk.com/software/taag/#p=display&f=Doom&t=CMake+Config+%28+base+%29&x=none&v=4&h=4&w=80&we=false
+#
+#	 _____ ___  ___      _          _____              __ _          __  _                     __  
+#	/  __ \|  \/  |     | |        /  __ \            / _(_)        / / | |                    \ \ 
+#	| /  \/| .  . | __ _| | _____  | /  \/ ___  _ __ | |_ _  __ _  | |  | |__   __ _ ___  ___   | |
+#	| |    | |\/| |/ _` | |/ / _ \ | |    / _ \| '_ \|  _| |/ _` | | |  | '_ \ / _` / __|/ _ \  | |
+#	| \__/\| |  | | (_| |   <  __/ | \__/\ (_) | | | | | | | (_| | | |  | |_) | (_| \__ \  __/  | |
+#	 \____/\_|  |_/\__,_|_|\_\___|  \____/\___/|_| |_|_| |_|\__, | | |  |_.__/ \__,_|___/\___|  | |
+#	                                                         __/ |  \_\                        /_/ 
+#	                                                        |___/                                  
+#
+
+
+#
+#	Logo para CMakeLists.txt modular (libreria(s) específicas).
+#
+#	URL para recreación:	https://patorjk.com/software/taag/#p=display&f=Slant&t=CMake+Config+%28+[--]+%29&x=none&v=4&h=4&w=80&we=false
+#	Nota:	Reemplaza "[--]" por el texto deseado entre paréntesis.
+#
+#	   ________  ___      __           ______            _____           __    _ 
+#	  / ____/  |/  /___ _/ /_____     / ____/___  ____  / __(_)___ _   _/_/	  | |
+#	 / /   / /|_/ / __ `/ //_/ _ \   / /   / __ \/ __ \/ /_/ / __ `/  / /     / /
+#	/ /___/ /  / / /_/ / ,< /  __/  / /___/ /_/ / / / / __/ / /_/ /  / /     / / 
+#	\____/_/  /_/\__,_/_/|_|\___/   \____/\____/_/ /_/_/ /_/\__, /  / /    _/_/  
+#	                                                       /____/   |_|   /_/    
+
+
