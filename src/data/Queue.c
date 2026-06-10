@@ -1,11 +1,13 @@
-#include <data/Queue.h>
+#include <stdlib.h>
+
+#include <notyOS/data/Queue.h>
 
 #define FRONT	queue->front
 #define REAR	queue->rear
 
 
 Queue* newQueue(uint16_t size, void (*cast)(void*, void*)) {
-	Queue* new_queue = memblockCreate(sizeof(Queue));
+	Queue* new_queue = malloc(sizeof(Queue));
 
 	//	Crear Nodos Auxiliares (frente y final).
 	Node* front = auxNode();
@@ -26,7 +28,7 @@ void  deleteQueue(Queue* queue) {
 
 	deleteNode(FRONT);
 	deleteNode(REAR);
-	memblockDelete(queue);
+	free(queue);
 }
 
 
@@ -89,6 +91,16 @@ void queueRear(Queue* queue, void* dest) {
 	if(queueIsEmpty(queue))	return;
 
 	queue->cast(dest, REAR->next->data);
+}
+
+
+void queueClear(Queue *queue) {
+	void* auxBlock = malloc(queue->type_size);
+
+	while(!queueIsEmpty(queue))
+		queueDequeue(queue, auxBlock);
+
+	free(auxBlock);
 }
 
 

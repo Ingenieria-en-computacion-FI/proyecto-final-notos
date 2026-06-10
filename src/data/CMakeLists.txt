@@ -20,21 +20,21 @@ message('\nGenerando: \"Estructuras de datos\":')
 
 #	Nodos (Nodes)
 add_library(node STATIC Node.c)
-target_link_libraries(node PUBLIC includeConfig)
+set_libConfig(node)
 
 
 #	Pila (Stack).
 add_library(stack STATIC Stack.c)
-target_link_libraries(stack PUBLIC includeConfig node)
+set_libConfig(stack node)
 
 
 #	Cola (Queue)
 add_library(queue STATIC Queue.c)
-target_link_libraries(queue PUBLIC includeConfig node)
+set_libConfig(queue node)
 
 
 #	Lista (list)
 add_library(list STATIC List.c)
-target_link_libraries(list PUBLIC includeConfig node)
+set_libConfig(list node)
 
 

@@ -136,14 +136,7 @@
 		 *
 		 *	@param	queue	Puntero a la cola a vaciar.
 		*/
-		inline static void queueClear(Queue *queue) {
-			void* auxBlock = memblockCreate(queue->type_size);
-
-			while(!queueIsEmpty(queue))
-				queueDequeue(queue, auxBlock);
-
-			memblockDelete(auxBlock);
-		}
+		void queueClear(Queue *queue);
 
 
 #endif

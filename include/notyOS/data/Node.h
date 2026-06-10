@@ -70,25 +70,6 @@
 		void deleteNode(Node* node);
 
 
-	/*	Funciones auxiliares para (generar / liberar) los bloques de memoria.	*/
-
-		/**
-		 *	@brief	Almacena en memoria un bloque de tamaño definido.
-		 *
-		 *	@param	memblock_size	Tamaño del bloque de memoria a almacenar.
-		 *
-		 *	@return	Puntero al bloque de memoria creado.
-		*/
-		void* memblockCreate(uint16_t memblock_size);
-
-		/**
-		 *	@brief	Libera el bloque de memoria reservado.
-		 *
-		 *	@param	memblock_addr	Puntero al bloque de memoria a liberar.
-		*/
-		void memblockDelete(void* memblock_addr);
-
-
 #endif
 
 

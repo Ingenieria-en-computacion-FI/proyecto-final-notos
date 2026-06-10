@@ -11,7 +11,7 @@ target_include_directories(includeConfig INTERFACE
 
 function (set_libConfig lib)
 
-	target_link_libraries(${lib} PUBLIC includeConfig)
+	target_link_libraries(${lib} PUBLIC includeConfig ${ARGN})
 
 	set_target_properties(${lib} PROPERTIES
 		LIBRARY_OUTPUT_DIRECTORY	${PROJECT_SOURCE_DIR}/lib

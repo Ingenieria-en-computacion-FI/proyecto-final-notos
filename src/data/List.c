@@ -1,4 +1,6 @@
-#include <data/List.h>
+#include <stdlib.h>
+
+#include <notyOS/data/List.h>
 
 #define START	list->start
 #define END	list->end
@@ -62,7 +64,7 @@ Node* getNode(List* list, int16_t index) {
 
 
 List* newList(uint16_t size, void (*cast)(void*, void*)) {
-	List* new_list = memblockCreate(sizeof(List));
+	List* new_list = malloc(sizeof(List));
 
 	//	Crear Nodos Auxiliares (inicio y final).
 	Node* start = auxNode();
@@ -81,9 +83,9 @@ void deleteList(List* list) {
 	//	Vaciar lista.
 	listClear(list);
 
-	memblockDelete(START);
-	memblockDelete(END);
-	memblockDelete(list);
+	free(START);
+	free(END);
+	free(list);
 }
 
 
@@ -122,7 +124,6 @@ void listRemove(List* list, int16_t index, void* dest) {
 	//	Obtener los nodo (${index} - 1) y (${index} + 1).
 	Node* prev = getNode(list, index);
 	Node* node = prev->next;
-	Node* next = node->next;
 
 	//	Almacenar la información.
 	list->cast(dest, prev->next->data);
@@ -160,6 +161,16 @@ void listLast(List* list, void* dest) {
 	if(listIsEmpty(list))	return;
 
 	list->cast(dest, END->prev->data);
+}
+
+
+void listClear(List *list) {
+	void* auxBlock = malloc(list->type_size);
+
+	while(!listIsEmpty(list))
+		listRemoveFirst(list, auxBlock);
+
+	free(auxBlock);
 }
 
 

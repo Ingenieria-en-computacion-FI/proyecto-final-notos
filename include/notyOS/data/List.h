@@ -171,14 +171,7 @@
 		 *
 		 *	@param	list	Puntero a la lista a vaciar.
 		*/
-		inline static void listClear(List *list) {
-			void* auxBlock = memblockCreate(list->type_size);
-
-			while(!listIsEmpty(list))
-				listRemoveFirst(list, auxBlock);
-
-			memblockDelete(auxBlock);
-		}
+		void listClear(List *list);
 
 
 #endif

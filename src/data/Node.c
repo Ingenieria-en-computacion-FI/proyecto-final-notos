@@ -1,14 +1,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <data/Node.h>
+#include <notyOS/data/Node.h>
 
 
 Node* newNode(void* src, uint16_t size) {
 	Node* new_node = auxNode();
 
 	//	Copiar memoria al contenedor.
-	void* dat = memblockCreate(size);
+	void* dat = malloc(size);
 	memcpy(dat, src, size);
 
 	//	Meter al nodo :p
@@ -17,9 +17,8 @@ Node* newNode(void* src, uint16_t size) {
 	return new_node;
 }
 
-
 Node* auxNode() {
-	Node* new_node = memblockCreate(sizeof(Node));
+	Node* new_node = malloc(sizeof(Node));
 
 	//	Generar el nodo
 	*new_node = (Node) {NULL, NULL, NULL};
@@ -27,20 +26,9 @@ Node* auxNode() {
 	return new_node;
 }
 
-
 void deleteNode(Node* node) {
-	memblockDelete(node->data);
-	memblockDelete(node);
+	free(node->data);
+	free(node);
 }
 
-
-
-void* memblockCreate(uint16_t memblock_size) {
-	return malloc(memblock_size);
-}
-
-
-void memblockDelete(void* memblock_addr) {
-	free(memblock_addr);
-}
 

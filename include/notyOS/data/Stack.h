@@ -119,14 +119,7 @@
 		 *
 		 *	@param	stack	Puntero a la pila a vaciar.
 		*/
-		inline static void stackClear(Stack *stack) {
-			void* auxBlock = memblockCreate(stack->type_size);
-
-			while(!stackIsEmpty(stack))
-				stackPop(stack, auxBlock);
-
-			memblockDelete(auxBlock);
-		}
+		void stackClear(Stack *stack);
 
 
 #endif

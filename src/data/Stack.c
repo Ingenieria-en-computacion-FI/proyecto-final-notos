@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include <data/Stack.h>
+#include <notyOS/data/Stack.h>
 
 
 Stack* newStack(uint16_t size, void (*cast)(void*, void*)) {
@@ -58,6 +58,16 @@ void stackTop(Stack* stack, void* dest) {
 	if(stackIsEmpty(stack))	return;
 
 	stack->cast(dest, stack->top->next->data);
+}
+
+
+void stackClear(Stack *stack) {
+	void* auxBlock = malloc(stack->type_size);
+
+	while(!stackIsEmpty(stack))
+		stackPop(stack, auxBlock);
+
+	free(auxBlock);
 }
 
 
