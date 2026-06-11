@@ -21,10 +21,10 @@
 #ifndef __notCore_scheduler_H__
 
 
-	#include <notyOS/core/Process.h>
-	#include <notyOS/data/Queue.h>
-
 	#define __notCore_scheduler_H__
+
+	#include <notOS/data/Queue.h>
+	#include "Process.h"
 
 
 	/**

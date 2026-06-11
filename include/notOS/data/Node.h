@@ -16,9 +16,10 @@
 #ifndef __notData_nodes_H__
 
 
-	#include <stdint.h>
-
 	#define __notData_nodes_H__
+
+	#include <stdbool.h>
+	#include <stdint.h>
 
 
 	/**

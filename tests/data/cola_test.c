@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include <notyOS/data/Queue.h>
+#include <notOS/notOS.h>
 
 
 void intParser(void* dest, void* src) {

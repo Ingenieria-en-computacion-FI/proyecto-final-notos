@@ -19,11 +19,9 @@
 #ifndef __notData_queue_H__
 
 
-	#include <stdbool.h>
+	#define __notData_queue_H__
 
 	#include "Node.h"
-	
-	#define __notData_queue_H__
 
 
 	/**

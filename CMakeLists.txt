@@ -25,11 +25,7 @@ include(cmake/Compiler.cmake)
 include(cmake/Libraries.cmake)
 
 
-#	Sources
-add_subdirectory(src/data)
-add_subdirectory(src/core)
-
-#	Tests
-add_subdirectory(tests/data)
+add_subdirectory(tests)
+add_subdirectory(src)
 
 

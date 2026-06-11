@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include <notyOS/core/Memory.h>
+#include <notOS/core/Memory.h>
 
 #define BLOCKS	ram->blocks
 #define FIRST	BLOCKS->start->next
@@ -69,7 +69,7 @@ void freeMemory(Memory* ram, uint16_t pid) {
 void memoryAddBlock(Memory *ram, uint16_t size) {
 	if(getBlocksUse(ram) == ram->size)	return;
 
-	MemoryBlock last_block = (MemoryBlock) {0, 0, 0, 0};
+	MemoryBlock last_block = (MemoryBlock) {0, 0, size, 0};
 	listLast(ram->blocks, &last_block);
 
 	MemoryBlock new_block = (MemoryBlock) {
@@ -89,7 +89,7 @@ void memoryCoalesce(Memory* ram) {
 		MemoryBlock* mem_l = (MemoryBlock*) n->data;
 		MemoryBlock* mem_r = (MemoryBlock*) n->next->data;
 
-		if(memoryBlockIsFree(mem_l) && memoryBlockIsFree(mem_l)) {
+		if(memoryBlockIsFree(mem_l) && memoryBlockIsFree(mem_r)) {
 			mem_l->size = mem_l->size + mem_r->size;
 
 			Node* tmp = n->next;
@@ -125,13 +125,13 @@ MemoryBlock* memoryBestFit(Memory* ram, uint16_t size) {
 	foreach_block() {
 		MemoryBlock* block = (MemoryBlock*) n->data;
 
+		n = n->next;
+
 		if(!memoryBlockIsFree(block))	continue;
 
 		if(block->size < size)	continue;
 
 		if(!best || block->size < best->size)	best = block;
-
-		n = n->next;
 	}
 
 	return best;
@@ -145,13 +145,13 @@ MemoryBlock* memoryWorstFit(Memory* ram, uint16_t size) {
 	foreach_block() {
 		MemoryBlock* block = (MemoryBlock*) n->data;
 
+		n = n->next;
+
 		if(!memoryBlockIsFree(block))	continue;
 
 		if(block->size < size)	continue;
 
 		if(!worst || block->size > worst->size)	worst = block;
-
-		n = n->next;
 	}
 
 	return worst;

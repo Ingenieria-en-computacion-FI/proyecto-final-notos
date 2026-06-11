@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include <notyOS/core/Process.h>
+#include <notOS/core/Process.h>
 
 
 Process* newProcess(uint16_t pid, uint16_t cpu_time, uint16_t mem_req, ProcessPriority priority) {

@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include <notyOS/data/Stack.h>
+#include <notOS/data/Stack.h>
 
 
 Stack* newStack(uint16_t size, void (*cast)(void*, void*)) {

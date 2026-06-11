@@ -13,6 +13,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
 add_compile_options(
+	-g
+	-O0
 	-Wall
 	-Wextra
 	-Wpedantic

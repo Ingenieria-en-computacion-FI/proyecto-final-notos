@@ -14,9 +14,9 @@
 #ifndef __notCore_process_H__
 
 
-	#include <stdint.h>
-
 	#define __notCore_process_H__
+
+	#include <stdint.h>
 
 	#define __notQuantum__	2
 

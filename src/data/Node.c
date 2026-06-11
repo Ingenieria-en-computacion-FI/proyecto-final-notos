@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <notyOS/data/Node.h>
+#include <notOS/data/Node.h>
 
 
 Node* newNode(void* src, uint16_t size) {

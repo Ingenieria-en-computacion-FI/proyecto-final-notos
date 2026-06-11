@@ -17,12 +17,10 @@
 
 #ifndef __notData_stack_H__
 
-
-	#include <stdbool.h>
-
-	#include "Node.h"
 	
 	#define __notData_stack_H__
+
+	#include "Node.h"
 
 
 	/**

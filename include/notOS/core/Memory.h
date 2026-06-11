@@ -21,9 +21,9 @@
 #ifndef __notCore_memoryblock_H__
 
 
-	#include <notyOS/data/List.h>
-
 	#define __notCore_memoryblock_H__
+
+	#include <notOS/data/List.h>
 
 
 	/**

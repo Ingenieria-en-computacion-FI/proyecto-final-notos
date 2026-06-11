@@ -19,11 +19,9 @@
 #ifndef __notData_list_H__
 
 
-	#include <stdbool.h>
+	#define __notData_list_H__
 
 	#include "Node.h"
-	
-	#define __notData_list_H__
 
 
 	/**

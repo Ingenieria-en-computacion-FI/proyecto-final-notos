@@ -363,6 +363,12 @@ La siguiente macro genera un error en C:
 #define foreach_block() for(uint16_t i = 0, Node* n = FIRST; i < listSize(BLOCKS); i++, n = n->next)
 ```
 
+#### Error 2
+Bug menor en la coalestecia de memoria:
+```c
+if(memoryBlockIsFree(mem_l) && memoryBlockIsFree(mem_l))
+```
+
 
 ## Correcciones realizadas
 
@@ -373,6 +379,13 @@ si son del mismo tipo de dato.
 Al final la macro queda así:
 ```c
 #define foreach_block() for(uint16_t i = 0, i < listSize(BLOCKS); i++)
+```
+
+#### Corrección 2
+Es tan sencillo como cambiar la segunda mención de `mem_l` por `mem_r`,
+lo que nos daría el siguiente condicional:
+```c
+if(memoryBlockIsFree(mem_l) && memoryBlockIsFree(mem_r))
 ```
 
 

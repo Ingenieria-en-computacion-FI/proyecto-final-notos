@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <notyOS/core/Scheduler.h>
+#include <notOS/core/Scheduler.h>
 
 #define PROCESSES	scheduler->processes
 

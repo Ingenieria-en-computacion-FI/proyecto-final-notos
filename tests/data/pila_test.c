@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include <notyOS/data/Stack.h>
+#include <notOS/notOS.h>
 
 
 void charParser(void* dest, void* src) {

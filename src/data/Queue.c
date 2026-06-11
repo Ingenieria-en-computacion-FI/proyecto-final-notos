@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include <notyOS/data/Queue.h>
+#include <notOS/data/Queue.h>
 
 #define FRONT	queue->front
 #define REAR	queue->rear

@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include <notyOS/data/List.h>
+#include <notOS/data/List.h>
 
 #define START	list->start
 #define END	list->end
@@ -56,10 +56,10 @@ Node* getNodeR(List* list, int16_t mov){
  *	@return	Puntero al nodo deseado.
 */
 Node* getNode(List* list, int16_t index) {
-	if(index - 1 < listSize(list) - index)
+	if(index < listSize(list) * 0.5)
 		return	getNodeL(list, index);
 	
-	return	getNodeR(list, listSize(list) - index);
+	return	getNodeR(list, listSize(list) - index + 1);
 }
 
 
@@ -94,8 +94,8 @@ void listAdd(List* list, int16_t index, void* data) {
 	if(invalidAddIndex())	return;
 	
 	//	Quitar circularidad temporalmente.
-	START->next->prev = START;
-	END->prev->next = END;
+	//START->next->prev = START;
+	//END->prev->next = END;
 
 	//	Obtener los nodo (${index} - 1) y (${index} + 1).
 	Node* prev = getNode(list, index);
@@ -111,8 +111,8 @@ void listAdd(List* list, int16_t index, void* data) {
 	next->prev = new_node;
 
 	//	Lineas mágicas para la circularidad.
-	START->next->prev = END->prev;
-	END->prev->next = START->next;
+	//START->next->prev = END->prev;
+	//END->prev->next = START->next;
 
 	list->length++;
 }
@@ -121,29 +121,29 @@ void listRemove(List* list, int16_t index, void* dest) {
 	//	Protección contra indice inválido.
 	if(invalidRemoveIndex()) return;
 
-	//	Obtener los nodo (${index} - 1) y (${index} + 1).
+	//	Obtener los nodo (${index} - 1) y (${index}).
 	Node* prev = getNode(list, index);
 	Node* node = prev->next;
 
 	//	Almacenar la información.
-	list->cast(dest, prev->next->data);
+	list->cast(dest, node->data);
 
 	//	Remover el nodo a la lista.
-	if(list->length == 1) {
-        	START->next = END;
-		END->prev = START;
-	}else {
+	//if(list->length == 1) {
+        //	START->next = END;
+	//	END->prev = START;
+	//}else {
 		Node* next = node->next;
 		
 		prev->next = next;
 		next->prev = prev;
 
-		if(node == START->next)
-			START->next = next;
+	//	if(node == START->next)
+	//		START->next = next;
 		
-		if(node == END->prev)
-			END->prev = prev;
-	}
+	//	if(node == END->prev)
+	//		END->prev = prev;
+	//}
 	deleteNode(node);
 
 	list->length--;

@@ -1,14 +1,14 @@
-import random
+from random import randint
 
-for i in range(10):
 
-    process = {
+def gen_process_list():
+    process_list = ''
 
-        "pid": i,
+    for i in range(10):
+        process = f'{i},{randint(1, 20)},{randint(10, 500)},{randint(0,3)},{randint(0, 3)}'
 
-        "burst": random.randint(1, 20),
+        process_list = f'{process_list} {process}'
 
-        "memory": random.randint(10, 500)
-    }
+    return process_list
 
-    print(process)
+
