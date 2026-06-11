@@ -375,7 +375,6 @@ Al final la macro queda así:
 #define foreach_block() for(uint16_t i = 0, i < listSize(BLOCKS); i++)
 ```
 
-...
 
 ## Validaciones realizadas
 

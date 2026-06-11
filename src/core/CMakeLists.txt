@@ -10,6 +10,7 @@
 #	relativo a las estructuras del sistema operativo:
 #	* Procesos.
 #	* Manejo de memoria.
+#	* Scheduler.
 #
 
 
@@ -23,5 +24,9 @@ set_libConfig(process)
 #	Memoria (memory)
 add_library(memory STATIC Memory.c)
 set_libConfig(memory list)
+
+#	Scheduler (scheduler)
+add_library(scheduler STATIC Scheduler.c)
+set_libConfig(scheduler process queue stack)
 
 

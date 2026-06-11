@@ -106,7 +106,8 @@
 	*/
 	inline static void processExecute(Process* process) {
 		processSetState(process, RUNNING);
-		process->remaining_time -= __notQuantum__;
+		process->remaining_time -= (process->remaining_time < __notQuantum__)
+					? process->remaining_time : __notQuantum__;
 	}
 
 	/**
@@ -121,7 +122,7 @@
 	inline static void processUpdate(Process* process) {
 		processSetState(
 			process,
-			(process->remaining_time < __notQuantum__) ? FINISHED : BLOCKED
+			(process->remaining_time == 0) ? FINISHED : BLOCKED
 		);
 	}
 
